@@ -31,12 +31,12 @@ const cardTemplate = `
 
 export default class PuppyView {
 
-  constructor(element, currentPup) {
-    this.element = element;
+  constructor(newElement, currentPup) {
+    this.newElement = newElement;
     this.currentPup = currentPup;
-    const el = document.createElement('div');
-    el.classList.add('puppy__card');
-    el.innerHTML = cardTemplate;
+    this.element = document.createElement('div');
+    this.element.classList.add('puppy__card');
+    this.element.innerHTML = cardTemplate;
             // this.element.appendChild(el);
   }
 

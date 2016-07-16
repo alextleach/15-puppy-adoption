@@ -5,14 +5,13 @@ export default class App {
     this.world = world;
     this.data = [];
 
-    const puppyList = world.querySelector('.puppy-container');
-    this.puppyView = new PuppyView(puppyList);
-    debugger
+    // const puppyList = world.querySelector('.puppy-container');
+    // this.puppyView = new PuppyView(puppyList);
   }
 
   render(data){
     // this.world.innerHTML='';
-
+    console.log(data);
     const components = this.data.map((item) => new PuppyView(this, item));
 
     components.forEach((card) => {
@@ -20,8 +19,7 @@ export default class App {
       card.render();
     });
 
-    this.puppyView.setData(this.data);
-    this.puppyView.render();
+
   }
 
   start() {
@@ -32,6 +30,4 @@ export default class App {
        this.render(data);
    });
  }
-
-
 }
