@@ -16,45 +16,46 @@
   </div>
 </div>
 
-<div class="puppy-app" id="app">
+
   <section class="add-puppy add-puppy__toggle">
     <div class="width-container">
       <h3>add a new puppy</h3>
-      <ul class="add-puppy__form">
-        <li class="add-puppy__form__item new-puppy">
+      <ul class="add-puppy__form new-puppy">
+        <li class="add-puppy__form__item new-puppy-item">
           <p>Name</p><input type="text" name="name" class="add-puppy__form__item__input" value="">
         </li>
-        <li class="add-puppy__form__item new-puppy">
+        <li class="add-puppy__form__item new-puppy-item">
           <p>Age</p><input type="text" name="name" class="add-puppy__form__item__input" value="">
         </li>
-        <li class="add-puppy__form__item new-puppy">
+        <li class="add-puppy__form__item new-puppy-item">
           <p>Photo URL</p><input type="text" name="name" class="add-puppy__form__item__input photo__url" value="">
         </li>
-        <li class="add-puppy__form__item new-puppy">
+        <li class="add-puppy__form__item new-puppy-item">
           <p>Description</p><input type="text" name="name" class="add-puppy__form__item__input" value="">
         </li>
       </ul>
       <button type="button" class="puppy__button puppy__save" name="button">SAVE</button>
     </div>
   </section>
+  <div class="puppy-app" id="app">
   <main>
-    <div class="width-container">
+    <div class="width-container puppy-container">
       <div class="puppy__card">
         <div class="puppy__card__image">
           <img src="http://placecera.com/250/250" class="puppy__card__image__img" alt="">
         </div>
         <div class="puppy__card__info">
-          <ul class="add-puppy__form">
-            <li class="add-puppy__form__item old-puppy">
+          <ul class="add-puppy__form old-puppy">
+            <li class="add-puppy__form__item old-puppy-item">
               <p>Name</p><input type="text" name="name" class="add-puppy__form__item__input dog__name" value="Doge">
             </li>
-            <li class="add-puppy__form__item old-puppy">
+            <li class="add-puppy__form__item old-puppy-item">
               <p>Age</p><input type="text" name="name" class="add-puppy__form__item__input dog__age" value="7">
             </li>
-            <li class="add-puppy__form__item old-puppy">
+            <li class="add-puppy__form__item old-puppy-item">
               <p>Photo URL</p><input type="text" name="name" class="add-puppy__form__item__input photo__url" value="http://placecera.com/250/250">
             </li>
-            <li class="add-puppy__form__item old-puppy">
+            <li class="add-puppy__form__item old-puppy-item">
               <p>Description</p><input type="text" name="name" class="add-puppy__form__item__input dog__description" value="actually the cutest doge">
             </li>
           </ul>
@@ -79,8 +80,8 @@
 
   <script type="text/javascript">
   var App = require ('app');
-  var element = document.querySelector('#app');
-  var appRun = new App(element);
+  var world = document.querySelector('.puppy-app');
+  var appRun = new App(world);
 
   appRun.start();
 

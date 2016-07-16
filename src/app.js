@@ -5,27 +5,33 @@ export default class App {
     this.world = world;
     this.data = [];
 
-    const puppyList = world.querySelector('.add-puppy__form');
+    const puppyList = world.querySelector('.puppy-container');
     this.puppyView = new PuppyView(puppyList);
+    debugger
   }
 
-  start() {
-    this.getData()
-    .then(() => {
-      this.render();
+  render(data){
+    // this.world.innerHTML='';
+
+    const components = this.data.map((item) => new PuppyView(this, item));
+
+    components.forEach((card) => {
+      this.world.appendChild(card.element);
+      card.render();
     });
-  }
 
-  getData(){
-    return fetch('http://tiny-tn.herokuapp.com/collections/ryan-puppy')
-    .then((res) => res.json())
-    .then((data) => {
-      this.data = data;
-    });
-  }
-
-  render(){
     this.puppyView.setData(this.data);
     this.puppyView.render();
   }
+
+  start() {
+     return fetch('http://tiny-tn.herokuapp.com/collections/ryan-puppy')
+     .then((res) => res.json())
+     .then((data)=> {
+       this.data = data;
+       this.render(data);
+   });
+ }
+
+
 }
