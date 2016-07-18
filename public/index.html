@@ -17,7 +17,7 @@
 </div>
 
 
-  <section class="add-puppy add-puppy__toggle">
+  <section class="add-puppy">
     <div class="width-container">
       <h3>add a new puppy</h3>
       <ul class="add-puppy__form new-puppy">
@@ -80,23 +80,14 @@
 
   <script type="text/javascript">
   var App = require ('app');
+  var createForm = require ('create-form');
   var world = document.querySelector('.puppy-container');
   var appRun = new App(world);
+  var toggle = new createForm(world);
 
   appRun.start();
+  toggle.toggle();
 
-  const addPuppyButton = document.querySelector('.puppy__plus');
-  const addPuppyForm = document.querySelector('.add-puppy');
-
-  addPuppyButton.addEventListener('click',onClick);
-
-  function onClick(){
-  addPuppyForm.classList.toggle('add-puppy__toggle');
-  window.setTimeout(function(){
-   addPuppyForm.style.opacity = 1;
-   addPuppyForm.style.height = '43vh';
- }, 100);
-  };
 
 
   </script>

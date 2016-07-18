@@ -10,7 +10,7 @@ export default class App {
   }
 
   render(data){
-    // this.world.innerHTML='';
+    this.world.innerHTML='';
     console.log(data);
     const components = this.data.map((item) => new PuppyView(this, item));
 
