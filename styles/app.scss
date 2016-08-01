@@ -25,6 +25,7 @@ body {
   // background: $accent;
   background-image: linear-gradient(to top, $accent, darken($accent, 4%));
   color: #fff;
+  width: 100%;
   &__content {
     display: flex;
     padding: $gutter;

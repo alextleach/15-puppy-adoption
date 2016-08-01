@@ -21,8 +21,8 @@ export default class CreateFormView {
   }
 
   addPuppy() {
-    const submit = this.element.querySelector('.add-puppy__submit');
-    submit.addEventListener('submit', (ev) => {
+    const puppySubmit = this.element.querySelector('.add-puppy__submit');
+    puppySubmit.addEventListener('submit', (ev) => {
       ev.preventDefault();
 
       this.formData = {
@@ -46,8 +46,8 @@ export default class CreateFormView {
           this.element.querySelector('.puppy__description').value = '';
 
           this.application.addPuppyData(data);
-          const dropDown = this.element.querySelector('.add-puppy');
-          dropDown.classList.toggle('add-puppy__toggle');
+          const goAway = this.element.querySelector('.add-puppy');
+          goAway.classList.toggle('add-puppy__toggle');
         });
     });
 

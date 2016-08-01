@@ -1,20 +1,20 @@
 const cardTemplate = `
 <div class="puppy__card__image">
-          <img src="http://placecera.com/250/250" class="puppy__card__image__img" alt="">
+          <img src="" class="puppy__card__image__img" alt="">
         </div>
         <div class="puppy__card__info">
           <ul class="add-puppy__form old-puppy">
             <li class="add-puppy__form__item old-puppy-item">
-              <p>Name</p><input type="text" name="name" class="add-puppy__form__item__input dog__name" value="Doge">
+              <p>Name</p><input type="text" name="name" class="add-puppy__form__item__input dog__name" value="">
             </li>
             <li class="add-puppy__form__item old-puppy-item">
-              <p>Age</p><input type="text" name="name" class="add-puppy__form__item__input dog__age" value="7">
+              <p>Age</p><input type="text" name="name" class="add-puppy__form__item__input dog__age" value="">
             </li>
             <li class="add-puppy__form__item old-puppy-item">
-              <p>Photo URL</p><input type="text" name="name" class="add-puppy__form__item__input photo__url" value="http://placecera.com/250/250">
+              <p>Photo URL</p><input type="text" name="name" class="add-puppy__form__item__input photo__url" value="">
             </li>
             <li class="add-puppy__form__item old-puppy-item">
-              <p>Description</p><input type="text" name="name" class="add-puppy__form__item__input dog__description" value="actually the cutest doge">
+              <p>Description</p><input type="text" name="name" class="add-puppy__form__item__input dog__description" value="">
             </li>
           </ul>
 
@@ -31,12 +31,13 @@ const cardTemplate = `
 
 export default class PuppyView {
 
-  constructor(newElement, currentPup) {
-    this.newElement = newElement;
-    this.currentPup = currentPup;
+  constructor(info, app) {
+    this.info = info;
+    this.app = app;
     this.element = document.createElement('div');
     this.element.classList.add('puppy__card');
     this.element.innerHTML = cardTemplate;
+    this.render();
     // this.element.appendChild(el);
   }
 
@@ -44,10 +45,10 @@ export default class PuppyView {
 
   render() {
 
-    this.element.querySelector('.dog__name').value = this.currentPup.name;
-    this.element.querySelector('.dog__age').value = this.currentPup.age;
-    this.element.querySelector('.photo__url').value = this.currentPup.photoUrl;
-    this.element.querySelector('.dog__description').value = this.currentPup.profile;
-    this.element.querySelector('.puppy__card__image__img').src = this.currentPup.photoUrl;
+    this.element.querySelector('.dog__name').value= this.info.name;
+    this.element.querySelector('.dog__age').value = this.info.age;
+    this.element.querySelector('.photo__url').value = this.info.photoUrl;
+    this.element.querySelector('.dog__description').value = this.info.profile;
+    this.element.querySelector('.puppy__card__image__img').setAttribute('src', this.info.photoUrl);
   }
 }

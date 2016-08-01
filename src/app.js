@@ -5,30 +5,26 @@ export default class App {
   constructor(element) {
     this.element = element;
     this.data = [];
-    this.formView = new CreateFormView(this.element.querySelector('main'), this);
-    // const puppyList = world.querySelector('.puppy-container');
-    // this.puppyView = new PuppyView(puppyList);
+    this.formView = new CreateFormView(this.element.querySelector('.top-nav-form'), this);
   }
 
   render() {
-    this.element.innerHTML = '';
-    console.log(data);
-    const components = this.data.map((item) => new PuppyView(this, item));
+    const puppyApp = this.element.querySelector('.puppy-container');
+    puppyApp.innerHTML = '';
+    // const components = this.data.map((item) => new PuppyView(this, item));
 
-    components.forEach((card) => {
-      this.element.appendChild(card.element);
-      card.render();
+    this.data.forEach((card) => {
+      const newPuppy = new PuppyView(card, this);
+      puppyApp.appendChild(newPuppy.element);
     });
-
-
   }
 
   start() {
     return fetch('http://tiny-tn.herokuapp.com/collections/al-puppy')
       .then((res) => res.json())
-      .then((data) => {
-        this.data = data;
-        this.render(data);
+      .then((info) => {
+        this.data = info;
+        this.render();
       });
   }
 
