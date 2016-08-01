@@ -20,21 +20,23 @@
   <section class="add-puppy">
     <div class="width-container">
       <h3>add a new puppy</h3>
+      <form class="add-puppy__submit">
       <ul class="add-puppy__form new-puppy">
         <li class="add-puppy__form__item new-puppy-item">
-          <p>Name</p><input type="text" name="name" class="add-puppy__form__item__input" value="">
+          <p>Name</p><input type="text" name="name" class="add-puppy__form__item__input puppy__name">
         </li>
         <li class="add-puppy__form__item new-puppy-item">
-          <p>Age</p><input type="text" name="name" class="add-puppy__form__item__input" value="">
+          <p>Age</p><input type="text" name="name" class="add-puppy__form__item__input puppy__age">
         </li>
         <li class="add-puppy__form__item new-puppy-item">
-          <p>Photo URL</p><input type="text" name="name" class="add-puppy__form__item__input photo__url" value="">
+          <p>Photo URL</p><input type="text" name="name" class="add-puppy__form__item__input photo__url puppy__url" >
         </li>
         <li class="add-puppy__form__item new-puppy-item">
-          <p>Description</p><input type="text" name="name" class="add-puppy__form__item__input" value="">
+          <p>Description</p><input type="text" name="name" class="add-puppy__form__item__input puppy__description">
         </li>
       </ul>
-      <button type="button" class="puppy__button puppy__save" name="button">SAVE</button>
+      <button class="puppy__button puppy__save" name="button">SAVE</button>
+    </form>
     </div>
   </section>
   <div class="puppy-app" id="app">
@@ -81,12 +83,12 @@
   <script type="text/javascript">
   var App = require ('app');
   var createForm = require ('create-form');
-  var world = document.querySelector('.puppy-container');
-  var appRun = new App(world);
-  var toggle = new createForm(world);
+  var element = document.querySelector('.puppy-container');
+  var appRun = new App(element);
+  var toggle = new createForm(element);
 
   appRun.start();
-  toggle.toggle();
+  toggle.start();
 
 
 

@@ -28,7 +28,7 @@ body{
 
 .top-nav{
   // background: $accent;
-  background-image: linear-gradient(top, $accent, darken($accent, 4%));
+  background-image: linear-gradient(to top, $accent, darken($accent, 4%));
   color: #fff;
   &__content{
     display: flex;
@@ -49,16 +49,16 @@ body{
   height: 0;
   width: 0;
   overflow: hidden;
-  background: $accent;
+  color: #a1a1a1;
+  background: darken($accent, 4%);
   width: 100%;
   padding: $gutter;
   box-shadow: 0.15rem 0.2rem 0.2rem rgba(#858585,.38);
-  transition: background 200ms ease-out, opacity 0.2s linear, height 0.3s cubic-bezier(0.74, 0.57, 0.29, 1.20), width 0.2s cubic-bezier(0.74, 0.57, 0.29, 1.20);
+  transition: background 200ms ease-out, opacity 0.2s linear, height 0.3s cubic-bezier(0.74, 0.57, 0.29, 1.20), width 0.2s cubic-bezier(0.74, 0.57, 0.29, 1.20), color 800ms ease-out;
 
   h3{
     margin: 0.3rem 0;
     text-transform: uppercase;
-    color: #2f2f2f;
     text-shadow: 0.1rem 0.1rem 0.2rem #d2d2d2;
     text-align: center;
     padding: 0 $gutter;
@@ -67,12 +67,13 @@ body{
   &__toggle {
     height: 43vh;
     width: 100%;
+    color: #2f2f2f;
     // border: 0.05rem solid darken($secondary, 2%);
     background: #ececec;
     background-repeat: repeat;
     border-bottom: 0.1rem solid darken($third, 2%);
     opacity: 1;
-    transition: background 500ms ease-out, opacity 0.1s linear, height 0.1s cubic-bezier(0.74, 0.57, 0.29, 1.20), width 0.2s cubic-bezier(0.74, 0.57, 0.29, 1.20);
+    transition: background 500ms ease-out, opacity 0.1s linear, height 0.1s cubic-bezier(0.74, 0.57, 0.29, 1.20), width 0.2s cubic-bezier(0.74, 0.57, 0.29, 1.20), color 700ms ease-out;
 
   }
   &__form{

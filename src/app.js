@@ -1,21 +1,22 @@
 import PuppyView from 'puppy-view';
+import CreateFormView from 'create-form';
 export default class App {
 
-  constructor(world) {
-    this.world = world;
+  constructor(element) {
+    this.element = element;
     this.data = [];
 
     // const puppyList = world.querySelector('.puppy-container');
     // this.puppyView = new PuppyView(puppyList);
   }
 
-  render(data){
-    this.world.innerHTML='';
+  render(){
+    this.element.innerHTML='';
     console.log(data);
     const components = this.data.map((item) => new PuppyView(this, item));
 
     components.forEach((card) => {
-      this.world.appendChild(card.element);
+      this.element.appendChild(card.element);
       card.render();
     });
 
@@ -23,11 +24,17 @@ export default class App {
   }
 
   start() {
-     return fetch('http://tiny-tn.herokuapp.com/collections/ryan-puppy')
+     return fetch('http://tiny-tn.herokuapp.com/collections/al-puppy')
      .then((res) => res.json())
      .then((data)=> {
        this.data = data;
        this.render(data);
    });
  }
+
+ addPuppyData(puppy) {
+    this.data = [...this.data, puppy];
+
+    this.render();
+  }
 }
