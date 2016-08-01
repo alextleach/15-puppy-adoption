@@ -33,4 +33,9 @@ export default class App {
 
     this.render();
   }
+  removePuppyData(puppy) {
+    this.data = this.data.filter((x) => x !== puppy);
+
+    this.render();
+  }
 }

@@ -1,9 +1,9 @@
 const cardTemplate = `
 <div class="puppy__card__image">
-          <form class="update-the-puppies">
           <img src="" class="puppy__card__image__img" alt="">
         </div>
         <div class="puppy__card__info">
+        <form class="update-the-puppies">
           <ul class="add-puppy__form old-puppy">
             <li class="add-puppy__form__item old-puppy-item">
               <p>Name</p><input type="text" name="name" class="add-puppy__form__item__input dog__name" value="">
@@ -92,7 +92,6 @@ export default class PuppyView {
   .then(() => {
     alert('BYE PUPPY!!!');
     this.app.removePuppyData(this.info);
-    this.render;
   });
     });
   }
