@@ -1,18 +1,14 @@
 // @import 'yoga';
 // @import 'normalize';
-
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome';
 @import 'box-sizing';
-
 $gutter: 0.5rem;
 $accent: #ff005c;
 $secondary: #c6fff6;
 $third: #ececec;
 $gray: rgba(#141414,.57);
-
-
-body{
+body {
   margin: 0;
   background: url('img/geometry.png');
 }
@@ -25,24 +21,22 @@ body{
   max-width: 50rem;
   margin: 0 auto;
 }
-
-.top-nav{
+.top-nav {
   // background: $accent;
   background-image: linear-gradient(to top, $accent, darken($accent, 4%));
   color: #fff;
-  &__content{
+  &__content {
     display: flex;
     padding: $gutter;
     align-items: center;
     font-size: 1.5rem;
   }
 }
-.puppy__hero{
+.puppy__hero {
   flex-grow: 1;
   font-size: 1.5rem;
   margin: 0.2rem 0;
 }
-
 .add-puppy {
   display: block;
   opacity: 0;
@@ -55,15 +49,13 @@ body{
   padding: $gutter;
   box-shadow: 0.15rem 0.2rem 0.2rem rgba(#858585,.38);
   transition: background 200ms ease-out, opacity 0.2s linear, height 0.3s cubic-bezier(0.74, 0.57, 0.29, 1.20), width 0.2s cubic-bezier(0.74, 0.57, 0.29, 1.20), color 800ms ease-out;
-
-  h3{
+  h3 {
     margin: 0.3rem 0;
     text-transform: uppercase;
     text-shadow: 0.1rem 0.1rem 0.2rem #d2d2d2;
     text-align: center;
     padding: 0 $gutter;
   }
-
   &__toggle {
     height: 43vh;
     width: 100%;
@@ -74,21 +66,16 @@ body{
     border-bottom: 0.1rem solid darken($third, 2%);
     opacity: 1;
     transition: background 500ms ease-out, opacity 0.1s linear, height 0.1s cubic-bezier(0.74, 0.57, 0.29, 1.20), width 0.2s cubic-bezier(0.74, 0.57, 0.29, 1.20), color 700ms ease-out;
-
   }
-  &__form{
+  &__form {
     width: 100%;
     padding: 0 $gutter;
-
-
     &__item {
       width: 100%;
-
-      p{
+      p {
         margin-bottom: 0;
       }
-
-      &__input{
+      &__input {
         width: 100%;
         background: transparent;
         border: 0;
@@ -98,15 +85,14 @@ body{
     }
   }
 }
-.puppy__button{
+.puppy__button {
   background: $accent;
   color: #fff;
   margin: 0 $gutter;
   border: 0.1rem solid darken($accent, 10%);
   border-radius: 0.2rem;
 }
-
-.puppy__card{
+.puppy__card {
   width: 100%;
   display: flex;
   align-items: center;
@@ -115,32 +101,27 @@ body{
   margin-top: 1rem;
   border-radius: 0.3rem;
   box-shadow: 0.15rem 0.3rem 0.3rem rgba(#858585,.68);
-
-  &__image{
+  &__image {
     width: 30%;
-    &__img{
+    &__img {
       width: 100%;
     }
   }
-  &__info{
+  &__info {
     width: 70%;
     flex-grow: 1;
-
-  &__buttons{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-
-
-    &--btn{
-      margin: 0 auto;
-      width: calc(50% - 1rem);
+    &__buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      &--btn {
+        margin: 0 auto;
+        width: calc(50% - 1rem);
+      }
     }
   }
-}
 }
 .puppy__delete {
   width: 100%;

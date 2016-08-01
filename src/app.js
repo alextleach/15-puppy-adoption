@@ -5,13 +5,13 @@ export default class App {
   constructor(element) {
     this.element = element;
     this.data = [];
-
+    this.formView = new CreateFormView(this.element.querySelector('main'), this);
     // const puppyList = world.querySelector('.puppy-container');
     // this.puppyView = new PuppyView(puppyList);
   }
 
-  render(){
-    this.element.innerHTML='';
+  render() {
+    this.element.innerHTML = '';
     console.log(data);
     const components = this.data.map((item) => new PuppyView(this, item));
 
@@ -24,15 +24,15 @@ export default class App {
   }
 
   start() {
-     return fetch('http://tiny-tn.herokuapp.com/collections/al-puppy')
-     .then((res) => res.json())
-     .then((data)=> {
-       this.data = data;
-       this.render(data);
-   });
- }
+    return fetch('http://tiny-tn.herokuapp.com/collections/al-puppy')
+      .then((res) => res.json())
+      .then((data) => {
+        this.data = data;
+        this.render(data);
+      });
+  }
 
- addPuppyData(puppy) {
+  addPuppyData(puppy) {
     this.data = [...this.data, puppy];
 
     this.render();

@@ -37,12 +37,12 @@ export default class PuppyView {
     this.element = document.createElement('div');
     this.element.classList.add('puppy__card');
     this.element.innerHTML = cardTemplate;
-            // this.element.appendChild(el);
+    // this.element.appendChild(el);
   }
 
 
 
-  render(){
+  render() {
 
     this.element.querySelector('.dog__name').value = this.currentPup.name;
     this.element.querySelector('.dog__age').value = this.currentPup.age;
