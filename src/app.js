@@ -20,7 +20,7 @@ export default class App {
   }
 
   start() {
-    return fetch('http://tiny-tn.herokuapp.com/collections/al-puppy')
+    return fetch('http://tiny-tn.herokuapp.com/collections/al-puppies')
       .then((res) => res.json())
       .then((info) => {
         this.data = info;

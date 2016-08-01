@@ -20,10 +20,10 @@ const cardTemplate = `
 
           <div class="puppy__card__info__buttons">
             <div class="puppy__card__info__buttons--btn">
-              <button type="button" class="puppy__button puppy__delete" name="button">DELETE</button>
+              <button type="clear" class="puppy__button puppy__delete" name="button">DELETE</button>
             </div>
             <div class="puppy__card__info__buttons--btn">
-              <button type="button" class="puppy__button puppy__update" name="button">PUPDATE</button>
+              <button type="submit" class="puppy__button puppy__update" name="button">PUPDATE</button>
             </div>
           </div>
         </div>
@@ -37,6 +37,9 @@ export default class PuppyView {
     this.element = document.createElement('div');
     this.element.classList.add('puppy__card');
     this.element.innerHTML = cardTemplate;
+
+    this.deletePuppy();
+
     this.render();
     // this.element.appendChild(el);
   }
@@ -51,4 +54,20 @@ export default class PuppyView {
     this.element.querySelector('.dog__description').value = this.info.profile;
     this.element.querySelector('.puppy__card__image__img').setAttribute('src', this.info.photoUrl);
   }
+
+  deletePuppy() {
+  this.element.querySelector('.puppy__delete').addEventListener('click', (ev) => {
+    ev.preventDefault();
+
+    fetch(`http://tiny-tn.herokuapp.com/collections/al-puppies/${this.info._id}`, {
+      method: `DELETE`,
+      body: JSON.stringify(this.element),
+    }).then((res) => res.json())
+  .then(() => {
+    alert('BYE PUPPY!!!');
+    this.app.removePuppyData(this.info);
+  });
+  });
+}
+
 }
