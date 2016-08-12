@@ -15,6 +15,7 @@ export default class App {
 
     this.data.forEach((card) => {
       const newPuppy = new PuppyView(card, this);
+
       puppyApp.appendChild(newPuppy.element);
     });
   }
@@ -38,4 +39,14 @@ export default class App {
 
     this.render();
   }
+
+  updatePuppy(newDoge) {
+    this.data = this.data.map((x) => {
+      if (x._id === newDoge._id) {
+        return newDoge;
+      }
+      return x;
+    });
+  }
+
 }

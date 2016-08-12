@@ -52,7 +52,7 @@ export default class PuppyView {
     this.element.querySelector('.dog__age').value = this.info.age;
     this.element.querySelector('.photo__url').value = this.info.photoUrl;
     this.element.querySelector('.dog__description').value = this.info.profile;
-    this.element.querySelector('.puppy__card__image__img').setAttribute('src', this.info.photoUrl);
+    this.element.querySelector('.puppy__card__image__img').src = this.info.photoUrl;
   }
 
 
@@ -69,13 +69,15 @@ export default class PuppyView {
           _id: this.info._id,
           name: this.element.querySelector('.dog__name').value,
           age: this.element.querySelector('.dog__age').value,
-          url: this.element.querySelector('.photo__url').value,
+          photoUrl: this.element.querySelector('.photo__url').value,
           profile: this.element.querySelector('.dog__description').value,
         }),
       }).then((res) => res.json())
     .then((data) => {
+      // this.info = data;
+      alert('This puppy has been updated! woof!');
+      this.app.updatePuppy(data);
       this.info = data;
-
       this.render();
     });
     });
