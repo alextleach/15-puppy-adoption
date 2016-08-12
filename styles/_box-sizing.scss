@@ -6,6 +6,10 @@ html {
 * {
   box-sizing: inherit;
 
+  ul{
+    padding-left: 0;
+    list-style: none;
+  }
   &:before,
   &:after {
     box-sizing: inherit;
